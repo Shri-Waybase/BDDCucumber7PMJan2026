@@ -1,6 +1,11 @@
-
+@Login@Regression
 Feature: To validate the login functionality of ScriptingLogic Platform
 
+  Background: Launch the browser and maximize it (precondition)
+  Given   User launch the browser
+  And     User maximize the browser
+
+  @validLogin
   Scenario: As a user I want to Login to scriptingLogic platform with valid credentials
     Given The user is on the Login page
 #   When  The user enters valid username and password
@@ -8,7 +13,7 @@ Feature: To validate the login functionality of ScriptingLogic Platform
     And   The user clicks on the login button
     Then  The user can see the dashboard
 
-
+@InvalidLogin
   Scenario: As a user I want to Login to scriptingLogic platform with invalid credentials
     Given The user is on the Login page
 #   When  The user enters invalid username and password
@@ -16,6 +21,7 @@ Feature: To validate the login functionality of ScriptingLogic Platform
     And   The user clicks on the login button
     Then  The user can see error message
 
+ @blankLogin
   Scenario: As a user I want to Login to scriptingLogic platform with blank credentials
     Given The user is on the Login page
 #   When  The user enters blank username and password

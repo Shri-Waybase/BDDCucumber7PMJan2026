@@ -3,10 +3,12 @@ package StepDefinitions;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 import java.util.List;
@@ -109,5 +111,18 @@ public class AddSupplierSD {
 
         Assert.assertEquals("Supplier not added.",expectedSupplier, actualSupplier);
 
+    }
+
+
+    @Given("I launch the browser")
+    public void iLaunchTheBrowser()
+    {
+        driver = new ChromeDriver();
+    }
+
+    @And("I maximize the browser")
+    public void iMaximizeTheBrowser()
+    {
+        driver.manage().window().maximize();
     }
 }

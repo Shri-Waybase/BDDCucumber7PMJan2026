@@ -1,9 +1,13 @@
 package StepDefinitions;
 
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import static StepDefinitions.LoginSD.driver;
 
@@ -35,4 +39,18 @@ public class ForgotPasswordSD {
     {
         driver.findElement(By.xpath("//p[normalize-space()='Answer Is Wrong']")).getText();
     }
+
+    @Given("launch the browser")
+    public void LaunchTheBrowser()
+    {
+        driver =  new ChromeDriver();
+    }
+
+    @And("maximize the browser")
+    public void MaximizeTheBrowser()
+    {
+        driver.manage().window().maximize();
+    }
+
+
 }

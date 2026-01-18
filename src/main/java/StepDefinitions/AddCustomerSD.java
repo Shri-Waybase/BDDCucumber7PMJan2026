@@ -2,10 +2,12 @@ package StepDefinitions;
 
 import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import static StepDefinitions.LoginSD.driver;
 
@@ -20,7 +22,7 @@ public class AddCustomerSD {
         driver.findElement(By.xpath("//a[text()='Add Customer']")).click();
     }
 
-    String name = "Tailor";
+    String name = "WonderLa";
     @And("The user enters Name,Address,ContactOne,ContactTwo")
     public void theUserEntersNameAddressContactOneContactTwo()
     {
@@ -62,5 +64,18 @@ public class AddCustomerSD {
     public void theUserEntersValidAnd(String username, String password) {
         driver.findElement(By.id("login-username")).sendKeys(username);
         driver.findElement(By.id("login-password")).sendKeys(password);
+    }
+
+
+    @Given("The user open the browser")
+    public void theUserOpenTheBrowser()
+    {
+        driver = new ChromeDriver();
+    }
+
+    @And("The user maximize the browser")
+    public void theUserMaximizeTheBrowser()
+    {
+        driver.manage().window().maximize();
     }
 }

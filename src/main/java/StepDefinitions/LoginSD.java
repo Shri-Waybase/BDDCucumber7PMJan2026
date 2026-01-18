@@ -25,8 +25,8 @@ public class LoginSD {
     @Given("The user is on the Login page")
     public void the_user_is_on_the_login_page()
     {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        /*driver = new ChromeDriver();
+        driver.manage().window().maximize();*/
         driver.get("https://stock.scriptinglogic.in/");
     }
 
@@ -127,8 +127,8 @@ public class LoginSD {
 
     @Given("I am on the Login page")
     public void iAmOnTheLoginPage() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        /*driver = new ChromeDriver();
+        driver.manage().window().maximize();*/
         driver.get("https://stock.scriptinglogic.in/");
 
     }
@@ -170,7 +170,17 @@ public class LoginSD {
 
     }
 
+    @Given("User launch the browser")
+    public void userLaunchTheBrowser()
+    {
+        driver =  new ChromeDriver();
+    }
 
+    @And("User maximize the browser")
+    public void userMaximizeTheBrowser()
+    {
+        driver.manage().window().maximize();
+    }
 
 
     /*Forgot password scenario*//*
