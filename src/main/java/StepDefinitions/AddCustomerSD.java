@@ -45,6 +45,7 @@ public class AddCustomerSD {
         String actual = driver
                 .findElement(By.xpath("//*[text()='[ " + name + " ] Customer Details Added !']"))
                 .getText();
+        Assert.assertEquals(expected, actual);
     }
 
     /*Duplicate Customer Scenarios*/

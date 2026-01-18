@@ -1,4 +1,4 @@
-@Login
+
 Feature: To validate the login functionality of ScriptingLogic Platform
 
   Scenario: As a user I want to Login to scriptingLogic platform with valid credentials
@@ -32,3 +32,20 @@ Feature: To validate the login functionality of ScriptingLogic Platform
           |admin    |admin   |
     And   I click on the login button
     Then  I can see dashboard
+
+
+
+    @UsingExampleKey
+  Scenario Outline: To check the Login for total 5 users
+    Given The user is on the Login page
+    When  The user enters  "<username>" and "<password>"
+    And   The user clicks on the login button
+    Then  The user can see the dashboard
+
+    Examples:
+      | username | password |
+      | admin    | admin    |
+      | admin1   | admin1   |
+      | manager  | manager  |
+      | user01   | user01   |
+      | testuser | test123  |

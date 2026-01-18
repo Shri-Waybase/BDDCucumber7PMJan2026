@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features ="resources",
         glue = "StepDefinitions",
         plugin = {"pretty","html:target/cucumber-report.html","json:target/cucumber.json"}
-        ,tags = "@AddCustomer"
+        ,tags = "@UsingExampleKey"
 )
 
 public class TestRunner

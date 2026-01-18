@@ -161,6 +161,15 @@ public class LoginSD {
         Assert.assertEquals("User not logged in.",expectedResult, actualResult);
     }
 
+    @When("The user enters  {string} and {string}")
+    public void theUserEntersAnd(String userName  , String passWord)
+    {
+
+        driver.findElement(By.id("login-username")).sendKeys(userName);
+        driver.findElement(By.id("login-password")).sendKeys(passWord);
+
+    }
+
 
 
 
